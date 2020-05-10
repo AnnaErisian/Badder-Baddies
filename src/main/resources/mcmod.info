@@ -1,0 +1,16 @@
+[
+{
+  "modid": "badderbaddies",
+  "name": "Badder Baddies",
+  "description": "Stronger versions of vanilla mobs",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["SigmaJ/TheErisian"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
