@@ -46,7 +46,10 @@ public abstract class EntityMySlime extends EntitySlime {
         int size = this.getSlimeSize();
         if (this.canEntityBeSeen(entityIn) && this.getDistanceSq(entityIn) < 0.6D * (double)size * 0.6D * (double)size)
         {
+            int hrt = entityIn.hurtResistantTime;
+            entityIn.hurtResistantTime = 0;
             entityIn.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), this.magicDamage(size));
+            entityIn.hurtResistantTime = hrt;
         }
     }
 }

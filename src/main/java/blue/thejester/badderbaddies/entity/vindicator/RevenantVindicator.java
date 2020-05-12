@@ -40,7 +40,7 @@ public class RevenantVindicator extends EntityMyVindicator {
 
     @Override
     protected float magicDamage() {
-        return 3;
+        return 5;
     }
 
     protected RevenantVindicator createInstance() {

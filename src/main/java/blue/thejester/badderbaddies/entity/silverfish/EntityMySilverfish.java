@@ -1,15 +1,15 @@
-package blue.thejester.badderbaddies.entity.vindicator;
+package blue.thejester.badderbaddies.entity.silverfish;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.monster.EntityVindicator;
+import net.minecraft.entity.monster.EntitySilverfish;
+import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public abstract class EntityMyVindicator extends EntityVindicator {
-    public EntityMyVindicator(World worldIn) {
+public abstract class EntityMySilverfish extends EntitySilverfish {
+    public EntityMySilverfish(World worldIn) {
         super(worldIn);
     }
 
@@ -19,11 +19,14 @@ public abstract class EntityMyVindicator extends EntityVindicator {
 
     protected abstract float magicDamage();
 
-    @Override
-    protected void applyEntityAttributes() {
+    protected abstract float speedMult();
+
+    protected void applyEntityAttributes()
+    {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(24.0D + healthBoost());
-        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(5.0D + damageBoost());
+        this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D + healthBoost());
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D * speedMult());
+        this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(1.0D + damageBoost());
     }
 
     @Override
