@@ -21,16 +21,32 @@ import blue.thejester.badderbaddies.entity.spider.DashingSpider;
 import blue.thejester.badderbaddies.entity.spider.LeapingSpider;
 import blue.thejester.badderbaddies.entity.spider.MotherSpider;
 import blue.thejester.badderbaddies.entity.spider.NeurovenomSpider;
+import blue.thejester.badderbaddies.entity.stray.SlimingStray;
+import blue.thejester.badderbaddies.entity.stray.StrongarmStray;
+import blue.thejester.badderbaddies.entity.stray.WandererStray;
 import blue.thejester.badderbaddies.entity.vindicator.BrutalVindicator;
 import blue.thejester.badderbaddies.entity.vindicator.RevenantVindicator;
 import blue.thejester.badderbaddies.entity.witch.BattyWitch;
 import blue.thejester.badderbaddies.entity.witch.CovenMatron;
 import blue.thejester.badderbaddies.entity.witch.HighAlchemist;
 import blue.thejester.badderbaddies.entity.witch.PreparedWitch;
+import blue.thejester.badderbaddies.entity.witherskeleton.CharredWS;
+import blue.thejester.badderbaddies.entity.witherskeleton.DragonheartWS;
+import blue.thejester.badderbaddies.entity.witherskeleton.PearlescentWS;
+import blue.thejester.badderbaddies.entity.witherskeleton.WitherPiglin;
 
 public class ModEntities {
     public static void registerEntities() {
         int id = 1;
+
+        StrongarmStray.registerSelf(id++);
+        SlimingStray.registerSelf(id++);
+        WandererStray.registerSelf(id++);
+
+        WitherPiglin.registerSelf(id++);
+        CharredWS.registerSelf(id++);
+        PearlescentWS.registerSelf(id++);
+        DragonheartWS.registerSelf(id++);
 
         DashingSpider.registerSelf(id++);
         MotherSpider.registerSelf(id++);
@@ -47,6 +63,7 @@ public class ModEntities {
         CovenMatron.registerSelf(id++);
 
         EntityCreeperFireball.registerSelf(id++);
+        EntitySuperCreeperFireball.registerSelf(id++);
         QuartzGhast.registerSelf(id++);
         FatherGhast.registerSelf(id++);
         ElderGhast.registerSelf(id++);
@@ -81,6 +98,15 @@ public class ModEntities {
     }
 
     public static void registerRenderers() {
+        StrongarmStray.registerOwnRenderer();
+        SlimingStray.registerOwnRenderer();
+        WandererStray.registerOwnRenderer();
+
+        WitherPiglin.registerOwnRenderer();
+        CharredWS.registerOwnRenderer();
+        PearlescentWS.registerOwnRenderer();
+        DragonheartWS.registerOwnRenderer();
+
         DashingSpider.registerOwnRenderer();
         MotherSpider.registerOwnRenderer();
         LeapingSpider.registerOwnRenderer();
@@ -96,6 +122,7 @@ public class ModEntities {
         CovenMatron.registerOwnRenderer();
 
         EntityCreeperFireball.registerOwnRenderer();
+        EntitySuperCreeperFireball.registerOwnRenderer();
         QuartzGhast.registerOwnRenderer();
         FatherGhast.registerOwnRenderer();
         ElderGhast.registerOwnRenderer();

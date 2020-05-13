@@ -34,7 +34,7 @@ public class GoldenGhast extends EntityMyGhast {
             double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.posY + (double)(this.height / 2.0F));
             double d4 = entitylivingbase.posZ - (this.posZ + vec3d.z * 4.0D);
             world.playEvent((EntityPlayer)null, 1016, new BlockPos(this), 0);
-            EntityCreeperFireball entitylargefireball = new EntityCreeperFireball(world, this, d2, d3, d4, 6);
+            EntitySuperCreeperFireball entitylargefireball = new EntitySuperCreeperFireball(world, this, d2, d3, d4, 6);
             entitylargefireball.posX = this.posX + vec3d.x * 4.0D;
             entitylargefireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
             entitylargefireball.posZ = this.posZ + vec3d.z * 4.0D;
@@ -47,7 +47,7 @@ public class GoldenGhast extends EntityMyGhast {
                 double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.posY + (double)(this.height / 2.0F));
                 double d4 = entitylivingbase.posZ - (this.posZ + vec3d.z * 4.0D);
                 world.playEvent((EntityPlayer)null, 1016, new BlockPos(this), 0);
-                EntityCreeperFireball entitylargefireball = new EntityCreeperFireball(world, this, d2, d3, d4, 6);
+                EntityCreeperFireball entitylargefireball = new EntityCreeperFireball(world, this, d2, d3, d4, 3);
                 Vec3d firingDir = new Vec3d(d2,d3,d4).normalize();
                 entitylargefireball.posX = this.posX + vec3d.x * 4.0D + firingDir.x * (i-2) * 5;
                 entitylargefireball.posY = this.posY + (double)(this.height / 2.0F) + 0.5D + firingDir.y * (i-2) * 5;
