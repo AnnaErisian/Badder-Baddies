@@ -1,6 +1,9 @@
 package blue.thejester.badderbaddies.entity;
 
 import blue.thejester.badderbaddies.entity.blaze.*;
+import blue.thejester.badderbaddies.entity.cavespider.DashingCaveSpider;
+import blue.thejester.badderbaddies.entity.cavespider.LeapingCaveSpider;
+import blue.thejester.badderbaddies.entity.cavespider.TinyJerk;
 import blue.thejester.badderbaddies.entity.ghast.*;
 import blue.thejester.badderbaddies.entity.magmacube.ArgentCube;
 import blue.thejester.badderbaddies.entity.magmacube.SolarCube;
@@ -14,6 +17,10 @@ import blue.thejester.badderbaddies.entity.slime.BloodSlime;
 import blue.thejester.badderbaddies.entity.slime.GelatinousCube;
 import blue.thejester.badderbaddies.entity.slime.RockySlime;
 import blue.thejester.badderbaddies.entity.slime.ShrapnelSlime;
+import blue.thejester.badderbaddies.entity.spider.DashingSpider;
+import blue.thejester.badderbaddies.entity.spider.LeapingSpider;
+import blue.thejester.badderbaddies.entity.spider.MotherSpider;
+import blue.thejester.badderbaddies.entity.spider.NeurovenomSpider;
 import blue.thejester.badderbaddies.entity.vindicator.BrutalVindicator;
 import blue.thejester.badderbaddies.entity.vindicator.RevenantVindicator;
 import blue.thejester.badderbaddies.entity.witch.BattyWitch;
@@ -24,6 +31,15 @@ import blue.thejester.badderbaddies.entity.witch.PreparedWitch;
 public class ModEntities {
     public static void registerEntities() {
         int id = 1;
+
+        DashingSpider.registerSelf(id++);
+        MotherSpider.registerSelf(id++);
+        LeapingSpider.registerSelf(id++);
+        NeurovenomSpider.registerSelf(id++);
+
+        DashingCaveSpider.registerSelf(id++);
+        LeapingCaveSpider.registerSelf(id++);
+        TinyJerk.registerSelf(id++);
 
         PreparedWitch.registerSelf(id++);
         BattyWitch.registerSelf(id++);
@@ -65,6 +81,14 @@ public class ModEntities {
     }
 
     public static void registerRenderers() {
+        DashingSpider.registerOwnRenderer();
+        MotherSpider.registerOwnRenderer();
+        LeapingSpider.registerOwnRenderer();
+        NeurovenomSpider.registerOwnRenderer();
+
+        DashingCaveSpider.registerOwnRenderer();
+        LeapingCaveSpider.registerOwnRenderer();
+        TinyJerk.registerOwnRenderer();
 
         PreparedWitch.registerOwnRenderer();
         BattyWitch.registerOwnRenderer();
