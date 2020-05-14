@@ -32,6 +32,16 @@ public class WandererStray extends EntityMyStray {
         return 6;
     }
 
+    @Override
+    protected double damageBoost() {
+        return 4;
+    }
+
+    @Override
+    protected int magicDamage() {
+        return 4;
+    }
+
     protected WandererStray createInstance() {
         return new WandererStray(this.world);
     }
@@ -40,18 +50,6 @@ public class WandererStray extends EntityMyStray {
     @Override
     protected ResourceLocation getLootTable() {
         return new ResourceLocation(BadderBaddies.MODID, NAME);
-    }
-
-    protected EntityArrow getArrow(float entity)
-    {
-        EntityArrow entityarrow = super.getArrow(entity);
-
-        if (entityarrow instanceof EntityTippedArrow)
-        {
-            ((EntityTippedArrow)entityarrow).addEffect(new PotionEffect(MobEffects.INSTANT_DAMAGE, 1));
-        }
-
-        return entityarrow;
     }
 
     /**

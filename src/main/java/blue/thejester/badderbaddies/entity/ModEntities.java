@@ -4,7 +4,13 @@ import blue.thejester.badderbaddies.entity.blaze.*;
 import blue.thejester.badderbaddies.entity.cavespider.DashingCaveSpider;
 import blue.thejester.badderbaddies.entity.cavespider.LeapingCaveSpider;
 import blue.thejester.badderbaddies.entity.cavespider.TinyJerk;
+import blue.thejester.badderbaddies.entity.creeper.AngryCreeper;
+import blue.thejester.badderbaddies.entity.creeper.QuantumCreeper;
+import blue.thejester.badderbaddies.entity.creeper.SpeedCreeper;
+import blue.thejester.badderbaddies.entity.creeper.WobblyCreeper;
 import blue.thejester.badderbaddies.entity.ghast.*;
+import blue.thejester.badderbaddies.entity.husk.DessicatedHusk;
+import blue.thejester.badderbaddies.entity.husk.Mummy;
 import blue.thejester.badderbaddies.entity.magmacube.ArgentCube;
 import blue.thejester.badderbaddies.entity.magmacube.SolarCube;
 import blue.thejester.badderbaddies.entity.shulker.AdamantiteShulker;
@@ -13,6 +19,10 @@ import blue.thejester.badderbaddies.entity.shulker.EntityMyShulkerBullet;
 import blue.thejester.badderbaddies.entity.shulker.IronShulker;
 import blue.thejester.badderbaddies.entity.silverfish.Goldenfish;
 import blue.thejester.badderbaddies.entity.silverfish.Platinumfish;
+import blue.thejester.badderbaddies.entity.skeleton.BarrageSkeleton;
+import blue.thejester.badderbaddies.entity.skeleton.PhasingSkeleton;
+import blue.thejester.badderbaddies.entity.skeleton.SalvoSkeleton;
+import blue.thejester.badderbaddies.entity.skeleton.SwiftarmSkeleton;
 import blue.thejester.badderbaddies.entity.slime.BloodSlime;
 import blue.thejester.badderbaddies.entity.slime.GelatinousCube;
 import blue.thejester.badderbaddies.entity.slime.RockySlime;
@@ -34,10 +44,32 @@ import blue.thejester.badderbaddies.entity.witherskeleton.CharredWS;
 import blue.thejester.badderbaddies.entity.witherskeleton.DragonheartWS;
 import blue.thejester.badderbaddies.entity.witherskeleton.PearlescentWS;
 import blue.thejester.badderbaddies.entity.witherskeleton.WitherPiglin;
+import blue.thejester.badderbaddies.entity.zombie.MutatedZombie;
+import blue.thejester.badderbaddies.entity.zombie.PlagueZombie;
+import blue.thejester.badderbaddies.entity.zombie.ReachingZombie;
+import blue.thejester.badderbaddies.entity.zombie.RottingZombie;
 
 public class ModEntities {
     public static void registerEntities() {
         int id = 1;
+
+        RottingZombie.registerSelf(id++);
+        ReachingZombie.registerSelf(id++);
+        PlagueZombie.registerSelf(id++);
+        MutatedZombie.registerSelf(id++);
+
+        DessicatedHusk.registerSelf(id++);
+        Mummy.registerSelf(id++);
+
+        AngryCreeper.registerSelf(id++);
+        SpeedCreeper.registerSelf(id++);
+        WobblyCreeper.registerSelf(id++);
+        QuantumCreeper.registerSelf(id++);
+
+        SwiftarmSkeleton.registerSelf(id++);
+        PhasingSkeleton.registerSelf(id++);
+        BarrageSkeleton.registerSelf(id++);
+        SalvoSkeleton.registerSelf(id++);
 
         StrongarmStray.registerSelf(id++);
         SlimingStray.registerSelf(id++);
@@ -98,6 +130,25 @@ public class ModEntities {
     }
 
     public static void registerRenderers() {
+
+        RottingZombie.registerOwnRenderer();
+        ReachingZombie.registerOwnRenderer();
+        PlagueZombie.registerOwnRenderer();
+        MutatedZombie.registerOwnRenderer();
+
+        DessicatedHusk.registerOwnRenderer();
+        Mummy.registerOwnRenderer();
+
+        AngryCreeper.registerOwnRenderer();
+        SpeedCreeper.registerOwnRenderer();
+        WobblyCreeper.registerOwnRenderer();
+        QuantumCreeper.registerOwnRenderer();
+
+        SwiftarmSkeleton.registerOwnRenderer();
+        PhasingSkeleton.registerOwnRenderer();
+        BarrageSkeleton.registerOwnRenderer();
+        SalvoSkeleton.registerOwnRenderer();
+
         StrongarmStray.registerOwnRenderer();
         SlimingStray.registerOwnRenderer();
         WandererStray.registerOwnRenderer();

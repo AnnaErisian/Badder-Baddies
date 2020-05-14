@@ -51,7 +51,7 @@ public class NeurovenomSpider extends EntityMySpider {
     @Override
     public boolean attackEntityAsMob(Entity entityIn) {
         boolean flag = super.attackEntityAsMob(entityIn);
-        if(flag) {
+        if(flag && entityIn instanceof EntityLivingBase) {
             int i = 0;
 
             if (this.world.getDifficulty() == EnumDifficulty.NORMAL)

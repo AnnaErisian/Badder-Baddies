@@ -26,6 +26,16 @@ public class SlimingStray extends EntityMyStray {
         return 6;
     }
 
+    @Override
+    protected double damageBoost() {
+        return 2;
+    }
+
+    @Override
+    protected int magicDamage() {
+        return 2;
+    }
+
     protected SlimingStray createInstance() {
         return new SlimingStray(this.world);
     }
@@ -43,7 +53,6 @@ public class SlimingStray extends EntityMyStray {
         if (entityarrow instanceof EntityTippedArrow)
         {
             ((EntityTippedArrow)entityarrow).addEffect(new PotionEffect(MobEffects.SLOWNESS, 600, 2));
-            ((EntityTippedArrow)entityarrow).addEffect(new PotionEffect(MobEffects.INSTANT_DAMAGE, 1));
         }
 
         return entityarrow;

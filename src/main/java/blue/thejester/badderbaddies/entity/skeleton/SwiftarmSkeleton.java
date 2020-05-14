@@ -1,30 +1,21 @@
-package blue.thejester.badderbaddies.entity.stray;
+package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
+import blue.thejester.badderbaddies.client.render.skeleton.RenderSwiftarmSkeleton;
 import blue.thejester.badderbaddies.client.render.stray.RenderStrongarmStray;
-import blue.thejester.badderbaddies.client.render.witherskeleton.RenderCharredWS;
-import blue.thejester.badderbaddies.entity.witherskeleton.EntityMyWitherSkeleton;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import blue.thejester.badderbaddies.entity.stray.EntityMyStray;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class StrongarmStray extends EntityMyStray {
+public class SwiftarmSkeleton extends EntityMySkeleton {
 
-    public static String NAME = "stray_strongarm";
+    public static String NAME = "skeleton_swiftarm";
 
-    public StrongarmStray(World worldIn) {
+    public SwiftarmSkeleton(World worldIn) {
         super(worldIn);
     }
 
@@ -35,7 +26,7 @@ public class StrongarmStray extends EntityMyStray {
 
     @Override
     protected double damageBoost() {
-        return 4;
+        return 2;
     }
 
     @Override
@@ -43,8 +34,18 @@ public class StrongarmStray extends EntityMyStray {
         return 0;
     }
 
-    protected StrongarmStray createInstance() {
-        return new StrongarmStray(this.world);
+    @Override
+    protected int firingSpeed() {
+        return 15;
+    }
+
+    @Override
+    protected int firingCount() {
+        return 1;
+    }
+
+    protected SwiftarmSkeleton createInstance() {
+        return new SwiftarmSkeleton(this.world);
     }
 
     //TODO make these also give everyone one
@@ -55,13 +56,13 @@ public class StrongarmStray extends EntityMyStray {
 
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
-        EntityRegistry.registerModEntity(entity_name, StrongarmStray.class, NAME, id,
+        EntityRegistry.registerModEntity(entity_name, SwiftarmSkeleton.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
                 0xdc90ed, 0xb570d3);
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerOwnRenderer() {
-        RenderingRegistry.registerEntityRenderingHandler(StrongarmStray.class, RenderStrongarmStray.FACTORY);
+        RenderingRegistry.registerEntityRenderingHandler(SwiftarmSkeleton.class, RenderSwiftarmSkeleton.FACTORY);
     }
 }

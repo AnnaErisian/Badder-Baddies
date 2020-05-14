@@ -1,5 +1,6 @@
 package blue.thejester.badderbaddies.entity.stray;
 
+import blue.thejester.badderbaddies.potion.SimpleHarming;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -20,11 +21,27 @@ public abstract class EntityMyStray extends EntityStray {
     }
 
     protected abstract double healthBoost();
+    protected abstract double damageBoost();
+    protected abstract int magicDamage();
 
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(20.0D + healthBoost());
+    }
+
+    protected EntityArrow getArrow(float entity)
+    {
+        EntityArrow entityarrow = super.getArrow(entity);
+
+        entityarrow.setDamage(entityarrow.getDamage() + damageBoost());
+
+        if (magicDamage() != 0 && entityarrow instanceof EntityTippedArrow)
+        {
+            ((EntityTippedArrow)entityarrow).addEffect(new PotionEffect(SimpleHarming.potion, 1, magicDamage()));
+        }
+
+        return entityarrow;
     }
 
 }

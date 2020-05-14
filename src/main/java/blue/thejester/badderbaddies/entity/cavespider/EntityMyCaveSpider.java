@@ -44,7 +44,7 @@ public abstract class EntityMyCaveSpider extends EntityCaveSpider {
     @Override
     public boolean attackEntityAsMob(Entity entityIn) {
         boolean flag = super.attackEntityAsMob(entityIn);
-        if(flag) {
+        if(flag && entityIn instanceof EntityLivingBase) {
             int hrt = entityIn.hurtResistantTime;
             entityIn.hurtResistantTime = 0;
             entityIn.attackEntityFrom(DamageSource.causeMobDamage(this).setDamageBypassesArmor(), this.magicDamage());
