@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public class RenderSpeedCreeper extends RenderCreeper {
 
     private static final ResourceLocation TEXTURE_LOCATION =
-            new ResourceLocation(BadderBaddies.MODID, "textures/entity/creeper_speed.png");
+            new ResourceLocation(BadderBaddies.MODID, "textures/entity/creeper_speedy.png");
 
     public RenderSpeedCreeper(RenderManager renderManager) {
         super(renderManager);

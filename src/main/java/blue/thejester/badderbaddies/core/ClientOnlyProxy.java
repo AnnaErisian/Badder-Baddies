@@ -10,9 +10,6 @@ public class ClientOnlyProxy extends CommonProxy {
     @Override
     public void preInit() {
 
-//        ClientRegistry.bindTileEntitySpecialRenderer(TileArrayedCrystalCube.class, new RenderTileArrayedCrystalCube());
-//        ClientRegistry.bindTileEntitySpecialRenderer(TileSecondSun.class, new RenderTileSecondSun());
-
         ModEntities.registerRenderers();
 
         super.preInit();

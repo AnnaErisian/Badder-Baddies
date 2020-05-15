@@ -40,7 +40,6 @@ public class WobblyCreeper extends EntityMyCreeper {
         super.onLivingUpdate();
         if(!world.isRemote) {
             if(world.rand.nextInt() % 256 == 0) {
-                Minecraft.getMinecraft().player.sendChatMessage("Hi");
                 this.addPotionEffect(new PotionEffect(MobEffects.SPEED, 50, 3));
             }
         }

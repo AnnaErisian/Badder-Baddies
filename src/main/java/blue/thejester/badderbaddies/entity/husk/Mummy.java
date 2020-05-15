@@ -36,6 +36,12 @@ public class Mummy extends EntityMyHusk {
         return 4;
     }
 
+    //TODO make these also give everyone one
+    @Override
+    protected ResourceLocation getLootTable() {
+        return new ResourceLocation(BadderBaddies.MODID, NAME);
+    }
+
     @Override
     public boolean attackEntityAsMob(Entity entityIn) {
         boolean flag = super.attackEntityAsMob(entityIn);

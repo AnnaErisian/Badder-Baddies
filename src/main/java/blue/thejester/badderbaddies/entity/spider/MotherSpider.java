@@ -62,6 +62,12 @@ public class MotherSpider extends EntityMySpider {
         super.onDeath(cause);
     }
 
+    //TODO make these also give everyone one
+    @Override
+    protected ResourceLocation getLootTable() {
+        return new ResourceLocation(BadderBaddies.MODID, NAME);
+    }
+
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, MotherSpider.class, NAME, id,

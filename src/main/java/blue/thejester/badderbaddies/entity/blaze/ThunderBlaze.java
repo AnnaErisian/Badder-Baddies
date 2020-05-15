@@ -2,13 +2,8 @@ package blue.thejester.badderbaddies.entity.blaze;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderThunderBlaze;
-import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.projectile.EntitySmallFireball;
-import net.minecraft.init.Items;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -57,7 +52,6 @@ public class ThunderBlaze extends EntityMyBlaze {
     protected ResourceLocation getLootTable() {
         return new ResourceLocation(BadderBaddies.MODID, NAME);
     }
-
 
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);

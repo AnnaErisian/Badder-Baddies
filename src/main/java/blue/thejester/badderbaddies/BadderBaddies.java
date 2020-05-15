@@ -48,8 +48,7 @@ public class BadderBaddies
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
+    public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
     }
 }

@@ -2,12 +2,17 @@ package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderSwiftarmSkeleton;
-import blue.thejester.badderbaddies.client.render.stray.RenderStrongarmStray;
-import blue.thejester.badderbaddies.entity.stray.EntityMyStray;
+import blue.thejester.badderbaddies.config.SpawnWeights;
+import blue.thejester.badderbaddies.entity.ModEntities;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

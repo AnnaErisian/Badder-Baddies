@@ -2,6 +2,8 @@ package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderSalvoSkeleton;
+import blue.thejester.badderbaddies.entity.ModEntities;
+import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;

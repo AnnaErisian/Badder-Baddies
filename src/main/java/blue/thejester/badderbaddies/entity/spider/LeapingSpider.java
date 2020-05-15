@@ -55,6 +55,12 @@ public class LeapingSpider extends EntityMySpider {
         return 1f;
     }
 
+    //TODO make these also give everyone one
+    @Override
+    protected ResourceLocation getLootTable() {
+        return new ResourceLocation(BadderBaddies.MODID, NAME);
+    }
+
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, LeapingSpider.class, NAME, id,

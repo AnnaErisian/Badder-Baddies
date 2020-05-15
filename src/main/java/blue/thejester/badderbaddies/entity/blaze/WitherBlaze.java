@@ -57,7 +57,6 @@ public class WitherBlaze extends EntityMyBlaze {
         return new ResourceLocation(BadderBaddies.MODID, NAME);
     }
 
-
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, WitherBlaze.class, NAME, id,

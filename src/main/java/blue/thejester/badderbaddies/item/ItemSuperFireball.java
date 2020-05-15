@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = BadderBaddies.MODID)
 public class ItemSuperFireball extends Item {
 
     private static final String NAME = "super_fireball";

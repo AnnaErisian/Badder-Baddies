@@ -84,7 +84,6 @@ public class ArgentCube extends EntityMyMagmaCube {
         return new ResourceLocation(BadderBaddies.MODID, NAME);
     }
 
-
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, ArgentCube.class, NAME, id,

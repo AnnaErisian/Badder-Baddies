@@ -37,6 +37,12 @@ public class Platinumfish extends EntityMySilverfish {
         return 1.4f;
     }
 
+    //TODO make these also give everyone one
+    @Override
+    protected ResourceLocation getLootTable() {
+        return new ResourceLocation(BadderBaddies.MODID, NAME);
+    }
+
     public static void registerSelf(int id) {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, Platinumfish.class, NAME, id,

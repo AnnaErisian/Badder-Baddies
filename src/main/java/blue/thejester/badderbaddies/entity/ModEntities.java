@@ -1,5 +1,6 @@
 package blue.thejester.badderbaddies.entity;
 
+import blue.thejester.badderbaddies.config.SpawnWeights;
 import blue.thejester.badderbaddies.entity.blaze.*;
 import blue.thejester.badderbaddies.entity.cavespider.DashingCaveSpider;
 import blue.thejester.badderbaddies.entity.cavespider.LeapingCaveSpider;
@@ -8,6 +9,10 @@ import blue.thejester.badderbaddies.entity.creeper.AngryCreeper;
 import blue.thejester.badderbaddies.entity.creeper.QuantumCreeper;
 import blue.thejester.badderbaddies.entity.creeper.SpeedCreeper;
 import blue.thejester.badderbaddies.entity.creeper.WobblyCreeper;
+import blue.thejester.badderbaddies.entity.enderman.Blenderman;
+import blue.thejester.badderbaddies.entity.enderman.Renderman;
+import blue.thejester.badderbaddies.entity.enderman.Senderman;
+import blue.thejester.badderbaddies.entity.enderman.Slenderman;
 import blue.thejester.badderbaddies.entity.ghast.*;
 import blue.thejester.badderbaddies.entity.husk.DessicatedHusk;
 import blue.thejester.badderbaddies.entity.husk.Mummy;
@@ -48,6 +53,13 @@ import blue.thejester.badderbaddies.entity.zombie.MutatedZombie;
 import blue.thejester.badderbaddies.entity.zombie.PlagueZombie;
 import blue.thejester.badderbaddies.entity.zombie.ReachingZombie;
 import blue.thejester.badderbaddies.entity.zombie.RottingZombie;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityHanging;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.entity.monster.*;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModEntities {
     public static void registerEntities() {
@@ -127,6 +139,11 @@ public class ModEntities {
 
         SolarCube.registerSelf(id++);
         ArgentCube.registerSelf(id++);
+
+        Blenderman.registerSelf(id++);
+        Slenderman.registerSelf(id++);
+        Renderman.registerSelf(id++);
+        Senderman.registerSelf(id++);
     }
 
     public static void registerRenderers() {
@@ -205,5 +222,10 @@ public class ModEntities {
 
         SolarCube.registerOwnRenderer();
         ArgentCube.registerOwnRenderer();
+
+        Blenderman.registerOwnRenderer();
+        Slenderman.registerOwnRenderer();
+        Renderman.registerOwnRenderer();
+        Senderman.registerOwnRenderer();
     }
 }

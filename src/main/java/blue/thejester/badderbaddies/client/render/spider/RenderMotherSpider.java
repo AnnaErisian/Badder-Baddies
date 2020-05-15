@@ -1,13 +1,13 @@
 package blue.thejester.badderbaddies.client.render.spider;
 
 import blue.thejester.badderbaddies.BadderBaddies;
-import blue.thejester.badderbaddies.entity.cavespider.DashingCaveSpider;
 import blue.thejester.badderbaddies.entity.spider.MotherSpider;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderCaveSpider;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RenderSpider;
+import net.minecraft.client.renderer.entity.layers.LayerRenderer;
+import net.minecraft.client.renderer.entity.layers.LayerSpiderEyes;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.entity.monster.EntitySpider;
@@ -15,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
 
 import javax.annotation.Nullable;
+import java.util.function.Predicate;
 
 public class RenderMotherSpider extends RenderSpider {
 
@@ -23,6 +24,14 @@ public class RenderMotherSpider extends RenderSpider {
     public RenderMotherSpider(RenderManager renderManager) {
         super(renderManager);
         this.shadowSize = 1.25f;
+        layerRenderers.removeIf(new Predicate<LayerRenderer<EntityCaveSpider>>() {
+            @Override
+            public boolean test(LayerRenderer<EntityCaveSpider> entityCaveSpiderLayerRenderer) {
+                return entityCaveSpiderLayerRenderer instanceof LayerSpiderEyes;
+            }
+        });
+
+        this.addLayer(new LayerSpiderEyesBlue(this));
     }
 
     @Nullable
