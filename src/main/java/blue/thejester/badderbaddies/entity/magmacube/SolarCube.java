@@ -1,18 +1,14 @@
 package blue.thejester.badderbaddies.entity.magmacube;
 
 import blue.thejester.badderbaddies.BadderBaddies;
-import blue.thejester.badderbaddies.client.render.BBParticleTypes;
-import blue.thejester.badderbaddies.client.render.ParticleSpawner;
 import blue.thejester.badderbaddies.client.render.magmacube.RenderSolarCube;
-import blue.thejester.badderbaddies.entity.slime.EntityMySlime;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -21,10 +17,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SolarCube extends EntityMyMagmaCube {
 
-    public static String NAME = "magmacube_solar";
+    public static final String NAME = "magmacube_solar";
 
     public SolarCube(World worldIn) {
         super(worldIn);
+        this.experienceValue += 6;
     }
 
     @Override
@@ -61,9 +58,14 @@ public class SolarCube extends EntityMyMagmaCube {
     }
 
     @Override
+    protected int expBonus(int size) {
+        return size;
+    }
+
+    @Override
     public void onDeath(DamageSource cause) {
         super.onDeath(cause);
-        if(!world.isRemote) {
+        if(!world.isRemote && !isSmallSlime()) {
             BlockPos pos = this.getPosition();
             if(world.isAirBlock(pos)) {
                 world.setBlockState(pos, Blocks.FLOWING_LAVA.getDefaultState());
@@ -77,7 +79,7 @@ public class SolarCube extends EntityMyMagmaCube {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.MAGMA_CUBE_SOLAR;
     }
 
     public static void registerSelf(int id) {

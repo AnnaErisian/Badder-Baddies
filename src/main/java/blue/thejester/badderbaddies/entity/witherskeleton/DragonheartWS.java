@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.witherskeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.witherskeleton.RenderDragonheartWS;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -23,10 +24,11 @@ import javax.annotation.Nullable;
 
 public class DragonheartWS extends EntityMyWitherSkeleton {
 
-    public static String NAME = "witherskeleton_dragonheart";
+    public static final String NAME = "witherskeleton_dragonheart";
 
     public DragonheartWS(World worldIn) {
         super(worldIn);
+        this.experienceValue += 20;
     }
 
     @Override
@@ -54,12 +56,12 @@ public class DragonheartWS extends EntityMyWitherSkeleton {
         ItemStack helm = new ItemStack(Items.LEATHER_HELMET);
         Items.LEATHER_HELMET.setColor(helm, 3545413);
         this.setItemStackToSlot(EntityEquipmentSlot.HEAD, helm);
+        this.inventoryArmorDropChances[EntityEquipmentSlot.HEAD.getIndex()] = 0.0F;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.WITHER_SKELETON_DRAGONHEART;
     }
 
     @Nullable

@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.spider;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.spider.RenderNeurovenomSpider;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntitySpider;
@@ -17,10 +18,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class NeurovenomSpider extends EntityMySpider {
-    private static final String NAME = "spider_neurovenom";
+    public static final String NAME = "spider_neurovenom";
 
     public NeurovenomSpider(World worldIn) {
         super(worldIn);
+        this.experienceValue += 18;
     }
 
     @Override
@@ -73,10 +75,9 @@ public class NeurovenomSpider extends EntityMySpider {
         return flag;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SPIDER_NEUROVENOM;
     }
 
     public static void registerSelf(int id) {

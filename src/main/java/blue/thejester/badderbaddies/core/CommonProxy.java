@@ -10,6 +10,7 @@ public class CommonProxy {
      */
     public void preInit() {
         ModEntities.registerEntities();
+        ModEntities.registerLootTables();
     }
 
     /**

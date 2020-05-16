@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.shulker;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.shulker.RenderIronShulker;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
@@ -17,10 +18,11 @@ import javax.annotation.Nullable;
 
 public class IronShulker extends EntityMyShulker {
 
-    public static String NAME = "shulker_iron";
+    public static final String NAME = "shulker_iron";
 
     public IronShulker(World worldIn) {
         super(worldIn);
+        this.experienceValue += 6;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class IronShulker extends EntityMyShulker {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SHULKER_IRON;
     }
 
     public static void registerSelf(int id) {

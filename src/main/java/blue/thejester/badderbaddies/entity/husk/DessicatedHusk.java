@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.husk;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.husk.RenderDessicatedHusk;
 import blue.thejester.badderbaddies.client.render.spider.RenderDashingSpider;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.spider.EntityMySpider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,10 +19,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DessicatedHusk extends EntityMyHusk {
-    private static final String NAME = "husk_dessicated";
+    public static final String NAME = "husk_dessicated";
 
     public DessicatedHusk(World worldIn) {
         super(worldIn);
+        this.experienceValue += 12;
     }
 
     @Override
@@ -39,10 +41,9 @@ public class DessicatedHusk extends EntityMyHusk {
         return 2;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.HUSK_DESSICATED;
     }
 
     @Override

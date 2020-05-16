@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.creeper;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.creeper.RenderSpeedCreeper;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -12,10 +13,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SpeedCreeper extends EntityMyCreeper {
 
-    public static String NAME = "creeper_speed";
+    public static final String NAME = "creeper_speed";
 
     public SpeedCreeper(World worldIn) {
         super(worldIn);
+        this.experienceValue += 12;
     }
 
     @Override
@@ -38,10 +40,9 @@ public class SpeedCreeper extends EntityMyCreeper {
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3125D);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.CREEPER_SPEED;
     }
 
     public static void registerSelf(int id) {

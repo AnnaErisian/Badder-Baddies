@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.blaze;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderMagmaBlaze;
 import blue.thejester.badderbaddies.client.render.vindicator.RenderBrutalVindicator;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,10 +21,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MagmaBlaze extends EntityMyBlaze {
 
-    public static String NAME = "blaze_magma";
+    public static final String NAME = "blaze_magma";
 
     public MagmaBlaze(World worldIn) {
         super(worldIn);
+        this.experienceValue += 10;
     }
 
     @Override
@@ -64,7 +66,7 @@ public class MagmaBlaze extends EntityMyBlaze {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.BLAZE_MAGMA;
     }
 
     public static void registerSelf(int id) {

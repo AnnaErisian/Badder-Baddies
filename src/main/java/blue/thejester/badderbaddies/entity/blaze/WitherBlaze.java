@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.blaze;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderWitherBlaze;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -16,10 +17,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WitherBlaze extends EntityMyBlaze {
 
-    public static String NAME = "blaze_wither";
+    public static final String NAME = "blaze_wither";
 
     public WitherBlaze(World worldIn) {
         super(worldIn);
+        this.experienceValue += 30;
     }
 
     @Override
@@ -54,7 +56,7 @@ public class WitherBlaze extends EntityMyBlaze {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.BLAZE_WITHER;
     }
 
     public static void registerSelf(int id) {

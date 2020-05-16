@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderBarrageSkeleton;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -11,10 +12,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BarrageSkeleton extends EntityMySkeleton {
 
-    public static String NAME = "skeleton_barrage";
+    public static final String NAME = "skeleton_barrage";
 
     public BarrageSkeleton(World worldIn) {
         super(worldIn);
+        this.experienceValue += 14;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class BarrageSkeleton extends EntityMySkeleton {
         return new BarrageSkeleton(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SKELETON_BARRAGE;
     }
 
     public static void registerSelf(int id) {

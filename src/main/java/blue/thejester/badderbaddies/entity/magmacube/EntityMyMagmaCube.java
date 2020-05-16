@@ -28,8 +28,10 @@ public abstract class EntityMyMagmaCube extends EntityMagmaCube {
             this.setHealth(this.getMaxHealth());
         }
 
-        this.experienceValue = size;
+        this.experienceValue = size + expBonus(size);
     }
+
+    protected abstract int expBonus(int size);
 
     /**
      * Gets the amount of damage dealt to the player when "attacked" by the slime.

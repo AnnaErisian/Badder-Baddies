@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.witherskeleton;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.vindicator.RenderRevenantVindicator;
 import blue.thejester.badderbaddies.client.render.witherskeleton.RenderWitherPiglin;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.vindicator.EntityMyVindicator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -24,10 +25,11 @@ import javax.annotation.Nullable;
 
 public class WitherPiglin extends EntityMyWitherSkeleton {
 
-    public static String NAME = "witherskeleton_piglin";
+    public static final String NAME = "witherskeleton_piglin";
 
     public WitherPiglin(World worldIn) {
         super(worldIn);
+        this.experienceValue += 5;
     }
 
     @Override
@@ -54,10 +56,9 @@ public class WitherPiglin extends EntityMyWitherSkeleton {
         this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.DIAMOND_SWORD));
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.WITHER_SKELETON_PIGLIN;
     }
 
 

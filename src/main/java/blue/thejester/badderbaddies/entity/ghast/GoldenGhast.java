@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.ghast;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.ghast.RenderGoldenGhast;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -14,10 +15,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GoldenGhast extends EntityMyGhast {
-    private static final String NAME = "ghast_golden";
+    public static final String NAME = "ghast_golden";
 
     public GoldenGhast(World worldIn) {
         super(worldIn);
+        this.experienceValue += 50;
     }
 
     @Override
@@ -58,10 +60,9 @@ public class GoldenGhast extends EntityMyGhast {
 
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.GHAST_GOLDEN;
     }
 
     public static void registerSelf(int id) {

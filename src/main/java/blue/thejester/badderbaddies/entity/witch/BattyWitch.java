@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.witch;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.witch.RenderBattyWitch;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -10,10 +11,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BattyWitch extends EntityMyWitch{
-    private static final String NAME = "witch_batty";
+    public static final String NAME = "witch_batty";
 
     public BattyWitch(World worldIn) {
         super(worldIn);
+        this.experienceValue += 16;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class BattyWitch extends EntityMyWitch{
         return 0;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.WITCH_BATTY;
     }
 
     public static void registerSelf(int id) {

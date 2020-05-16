@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.zombie;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.husk.RenderDessicatedHusk;
 import blue.thejester.badderbaddies.client.render.zombie.RenderRottingZombie;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.husk.EntityMyHusk;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,10 +18,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class RottingZombie extends EntityMyZombie {
-    private static final String NAME = "zombie_rotting";
+    public static final String NAME = "zombie_rotting";
 
     public RottingZombie(World worldIn) {
         super(worldIn);
+        this.experienceValue += 3;
     }
 
     @Override
@@ -38,10 +40,9 @@ public class RottingZombie extends EntityMyZombie {
         return 0;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.ZOMBIE_ROTTING;
     }
 
     public static void registerSelf(int id) {

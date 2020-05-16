@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.cavespider;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.cavespider.RenderDashingCaveSpider;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -10,10 +11,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DashingCaveSpider extends EntityMyCaveSpider {
-    private static final String NAME = "cavespider_dashing";
+    public static final String NAME = "cavespider_dashing";
 
     public DashingCaveSpider(World worldIn) {
         super(worldIn);
+        this.experienceValue += 12;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class DashingCaveSpider extends EntityMyCaveSpider {
         return 0;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.CAVE_SPIDER_DASHING;
     }
 
     public static void registerSelf(int id) {

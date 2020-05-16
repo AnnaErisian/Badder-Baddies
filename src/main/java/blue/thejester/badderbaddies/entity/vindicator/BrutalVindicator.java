@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.vindicator;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.vindicator.RenderBrutalVindicator;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
@@ -15,10 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BrutalVindicator extends EntityMyVindicator {
 
-    public static String NAME = "vindicator_brutal";
+    public static final String NAME = "vindicator_brutal";
 
     public BrutalVindicator(World worldIn) {
         super(worldIn);
+        this.experienceValue += 10;
     }
 
     @Override
@@ -47,7 +49,7 @@ public class BrutalVindicator extends EntityMyVindicator {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.VINDICATOR_BRUTAL;
     }
 
 

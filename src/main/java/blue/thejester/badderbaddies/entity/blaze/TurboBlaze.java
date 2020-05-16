@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.blaze;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderMagmaBlaze;
 import blue.thejester.badderbaddies.client.render.blaze.RenderTurboBlaze;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.init.Items;
@@ -18,10 +19,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class TurboBlaze extends EntityMyBlaze {
 
-    public static String NAME = "blaze_turbo";
+    public static final String NAME = "blaze_turbo";
 
     public TurboBlaze(World worldIn) {
         super(worldIn);
+        this.experienceValue += 40;
     }
 
     @Override
@@ -62,7 +64,7 @@ public class TurboBlaze extends EntityMyBlaze {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.BLAZE_TURBO;
     }
 
     public static void registerSelf(int id) {

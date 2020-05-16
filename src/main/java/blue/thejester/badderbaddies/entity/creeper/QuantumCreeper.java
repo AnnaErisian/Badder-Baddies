@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.creeper;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.creeper.RenderQuantumCreeper;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,10 +21,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class QuantumCreeper extends EntityMyCreeper {
 
-    public static String NAME = "creeper_quantum";
+    public static final String NAME = "creeper_quantum";
 
     public QuantumCreeper(World worldIn) {
         super(worldIn);
+        this.experienceValue += 27;
     }
 
     @Override
@@ -107,10 +109,9 @@ public class QuantumCreeper extends EntityMyCreeper {
         return flag;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.CREEPER_QUANTUM;
     }
 
     public static void registerSelf(int id) {

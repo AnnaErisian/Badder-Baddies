@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.husk;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.husk.RenderMummy;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -15,10 +16,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Mummy extends EntityMyHusk {
-    private static final String NAME = "husk_mummy";
+    public static final String NAME = "husk_mummy";
 
     public Mummy(World worldIn) {
         super(worldIn);
+        this.experienceValue += 24;
     }
 
     @Override
@@ -36,10 +38,9 @@ public class Mummy extends EntityMyHusk {
         return 4;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.HUSK_MUMMY;
     }
 
     @Override

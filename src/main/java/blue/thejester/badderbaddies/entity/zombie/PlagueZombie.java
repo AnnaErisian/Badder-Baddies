@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.zombie;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.zombie.RenderPlagueZombie;
 import blue.thejester.badderbaddies.client.render.zombie.RenderReachingZombie;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
@@ -16,10 +17,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PlagueZombie extends EntityMyZombie {
-    private static final String NAME = "zombie_plague";
+    public static final String NAME = "zombie_plague";
 
     public PlagueZombie(World worldIn) {
         super(worldIn);
+        this.experienceValue += 12;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class PlagueZombie extends EntityMyZombie {
         return flag;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.ZOMBIE_PLAGUE;
     }
 
     public static void registerSelf(int id) {

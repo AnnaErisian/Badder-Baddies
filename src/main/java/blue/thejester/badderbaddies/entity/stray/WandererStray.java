@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.stray;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.stray.RenderWandererStray;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.monster.AbstractSkeleton;
 import net.minecraft.entity.projectile.EntityArrow;
@@ -19,12 +20,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WandererStray extends EntityMyStray {
 
-    public static String NAME = "stray_wanderer";
+    public static final String NAME = "stray_wanderer";
 
     private final EntityAIAttackRangedBow<AbstractSkeleton> aiArrowAttack = new EntityAIAttackRangedBow<AbstractSkeleton>(this, 1.0D, 20, 15.0F);
 
     public WandererStray(World worldIn) {
         super(worldIn);
+        this.experienceValue += 22;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class WandererStray extends EntityMyStray {
         return new WandererStray(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.STRAY_WANDERER;
     }
 
     /**

@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.vindicator;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.vindicator.RenderBrutalVindicator;
 import blue.thejester.badderbaddies.client.render.vindicator.RenderRevenantVindicator;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -22,10 +23,11 @@ import javax.annotation.Nullable;
 
 public class RevenantVindicator extends EntityMyVindicator {
 
-    public static String NAME = "vindicator_revenant";
+    public static final String NAME = "vindicator_revenant";
 
     public RevenantVindicator(World worldIn) {
         super(worldIn);
+        this.experienceValue += 25;
     }
 
     @Override
@@ -61,7 +63,7 @@ public class RevenantVindicator extends EntityMyVindicator {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.VINDICATOR_REVENANT;
     }
 
 

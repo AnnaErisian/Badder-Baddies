@@ -17,7 +17,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityCreeperFireball extends EntityLargeFireball {
 
-    private static final String NAME = "bb_fireball_bigexplosive";
+    public static final String NAME = "bb_fireball_bigexplosive";
 
     public EntityCreeperFireball(World worldIn, int pow) {
         super(worldIn);

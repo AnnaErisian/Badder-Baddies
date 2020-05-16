@@ -29,7 +29,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityMyShulkerBullet extends EntityShulkerBullet {
-    private static final String NAME = "bb_shulker_bullet";
+    public static final String NAME = "bb_shulker_bullet";
     private EntityMyShulker owner;
     private float magicDamage;
     private int potLevel;

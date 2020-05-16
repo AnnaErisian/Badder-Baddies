@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.skeleton;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderSwiftarmSkeleton;
 import blue.thejester.badderbaddies.config.SpawnWeights;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.ModEntities;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntitySkeleton;
@@ -18,10 +19,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SwiftarmSkeleton extends EntityMySkeleton {
 
-    public static String NAME = "skeleton_swiftarm";
+    public static final String NAME = "skeleton_swiftarm";
 
     public SwiftarmSkeleton(World worldIn) {
         super(worldIn);
+        this.experienceValue += 3;
     }
 
     @Override
@@ -53,10 +55,9 @@ public class SwiftarmSkeleton extends EntityMySkeleton {
         return new SwiftarmSkeleton(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SKELETON_SWIFTARM;
     }
 
     public static void registerSelf(int id) {

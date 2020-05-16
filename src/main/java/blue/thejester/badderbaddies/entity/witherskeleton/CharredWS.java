@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.witherskeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.witherskeleton.RenderCharredWS;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.Items;
@@ -19,10 +20,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CharredWS extends EntityMyWitherSkeleton {
 
-    public static String NAME = "witherskeleton_charred";
+    public static final String NAME = "witherskeleton_charred";
 
     public CharredWS(World worldIn) {
         super(worldIn);
+        this.experienceValue += 9;
     }
 
     @Override
@@ -49,10 +51,9 @@ public class CharredWS extends EntityMyWitherSkeleton {
         this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.DIAMOND_SWORD));
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.WITHER_SKELETON_CHARRED;
     }
 
 

@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderPhasingSkeleton;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,12 +19,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PhasingSkeleton extends EntityMySkeleton {
 
-    public static String NAME = "skeleton_phasing";
+    public static final String NAME = "skeleton_phasing";
 
     private static final DataParameter<Boolean> PHASED = EntityDataManager.<Boolean>createKey(PhasingSkeleton.class, DataSerializers.BOOLEAN);
 
     public PhasingSkeleton(World worldIn) {
         super(worldIn);
+        this.experienceValue += 8;
     }
 
     protected void entityInit()
@@ -120,10 +122,9 @@ public class PhasingSkeleton extends EntityMySkeleton {
         return new PhasingSkeleton(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SKELETON_PHASING;
     }
 
     public static void registerSelf(int id) {

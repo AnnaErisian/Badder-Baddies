@@ -58,7 +58,9 @@ import net.minecraft.entity.EntityHanging;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.*;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class ModEntities {
@@ -227,5 +229,81 @@ public class ModEntities {
         Slenderman.registerOwnRenderer();
         Renderman.registerOwnRenderer();
         Senderman.registerOwnRenderer();
+    }
+
+    public static void registerLootTables() {
+        LootTableList.register(LootTables.BLAZE_MAGMA);
+        LootTableList.register(LootTables.BLAZE_THUNDER);
+        LootTableList.register(LootTables.BLAZE_WITHER);
+        LootTableList.register(LootTables.BLAZE_TURBO);
+
+        LootTableList.register(LootTables.CAVE_SPIDER_DASHING);
+        LootTableList.register(LootTables.CAVE_SPIDER_LEAPING);
+        LootTableList.register(LootTables.CAVE_SPIDER_JERK);
+
+        LootTableList.register(LootTables.CREEPER_ANGRY);
+        LootTableList.register(LootTables.CREEPER_SPEED);
+        LootTableList.register(LootTables.CREEPER_WOBBLY);
+        LootTableList.register(LootTables.CREEPER_QUANTUM);
+
+        LootTableList.register(LootTables.ENDERMAN_BLENDERMAN);
+        LootTableList.register(LootTables.ENDERMAN_RENDERMAN);
+        LootTableList.register(LootTables.ENDERMAN_SENDERMAN);
+        LootTableList.register(LootTables.ENDERMAN_SLENDERMAN);
+
+        LootTableList.register(LootTables.GHAST_QUARTZ);
+        LootTableList.register(LootTables.GHAST_FATHER);
+        LootTableList.register(LootTables.GHAST_ELDER);
+        LootTableList.register(LootTables.GHAST_GOLDEN);
+
+        LootTableList.register(LootTables.HUSK_DESSICATED);
+        LootTableList.register(LootTables.HUSK_MUMMY);
+
+        LootTableList.register(LootTables.MAGMA_CUBE_ARGENT);
+        LootTableList.register(LootTables.MAGMA_CUBE_SOLAR);
+
+        LootTableList.register(LootTables.SHULKER_IRON);
+        LootTableList.register(LootTables.SHULKER_DIAMOND);
+        LootTableList.register(LootTables.SHULKER_ADAMANTITE);
+
+        LootTableList.register(LootTables.SILVERFISH_GOLDENFISH);
+        LootTableList.register(LootTables.SILVERFISH_PLATINUMFISH);
+
+        LootTableList.register(LootTables.SKELETON_SWIFTARM);
+        LootTableList.register(LootTables.SKELETON_PHASING);
+        LootTableList.register(LootTables.SKELETON_BARRAGE);
+        LootTableList.register(LootTables.SKELETON_SALVO);
+
+        LootTableList.register(LootTables.SLIME_ROCKY);
+        LootTableList.register(LootTables.SLIME_BLOOD);
+        LootTableList.register(LootTables.SLIME_SHRAPNEL);
+        LootTableList.register(LootTables.SLIME_GELATINOUS);
+
+        LootTableList.register(LootTables.SPIDER_DASHING);
+        LootTableList.register(LootTables.SPIDER_MOTHER);
+        LootTableList.register(LootTables.SPIDER_LEAPING);
+        LootTableList.register(LootTables.SPIDER_NEUROVENOM);
+
+        LootTableList.register(LootTables.STRAY_STRONGARM);
+        LootTableList.register(LootTables.STRAY_SLIMING);
+        LootTableList.register(LootTables.STRAY_WANDERER);
+
+        LootTableList.register(LootTables.VINDICATOR_BRUTAL);
+        LootTableList.register(LootTables.VINDICATOR_REVENANT);
+
+        LootTableList.register(LootTables.WITCH_PREPARED);
+        LootTableList.register(LootTables.WITCH_BATTY);
+        LootTableList.register(LootTables.WITCH_ALCHEMIST);
+        LootTableList.register(LootTables.WITCH_MATRON);
+
+        LootTableList.register(LootTables.WITHER_SKELETON_PIGLIN);
+        LootTableList.register(LootTables.WITHER_SKELETON_CHARRED);
+        LootTableList.register(LootTables.WITHER_SKELETON_PEARLESCENT);
+        LootTableList.register(LootTables.WITHER_SKELETON_DRAGONHEART);
+
+        LootTableList.register(LootTables.ZOMBIE_ROTTING);
+        LootTableList.register(LootTables.ZOMBIE_REACHING);
+        LootTableList.register(LootTables.ZOMBIE_PLAGUE);
+        LootTableList.register(LootTables.ZOMBIE_MUTATED);
     }
 }

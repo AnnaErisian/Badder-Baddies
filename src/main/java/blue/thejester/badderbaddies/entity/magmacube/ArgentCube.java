@@ -5,6 +5,7 @@ import blue.thejester.badderbaddies.client.render.BBParticleTypes;
 import blue.thejester.badderbaddies.client.render.ParticleSpawner;
 import blue.thejester.badderbaddies.client.render.magmacube.RenderArgentCube;
 import blue.thejester.badderbaddies.client.render.magmacube.RenderSolarCube;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
@@ -21,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ArgentCube extends EntityMyMagmaCube {
 
-    public static String NAME = "magmacube_argent";
+    public static final String NAME = "magmacube_argent";
 
     public ArgentCube(World worldIn) {
         super(worldIn);
@@ -61,6 +62,11 @@ public class ArgentCube extends EntityMyMagmaCube {
     }
 
     @Override
+    protected int expBonus(int size) {
+        return size+2;
+    }
+
+    @Override
     public boolean isImmuneToExplosions() {
         return true;
     }
@@ -68,7 +74,7 @@ public class ArgentCube extends EntityMyMagmaCube {
     @Override
     public void onDeath(DamageSource cause) {
         super.onDeath(cause);
-        if(!world.isRemote) {
+        if(!world.isRemote && !isSmallSlime()) {
             boolean flag = net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this);
             this.dead = true;
             this.world.createExplosion(this, this.posX, this.posY, this.posZ, getSlimeSize(), flag);
@@ -81,7 +87,7 @@ public class ArgentCube extends EntityMyMagmaCube {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.MAGMA_CUBE_ARGENT;
     }
 
     public static void registerSelf(int id) {

@@ -14,7 +14,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
-//TODO put on all the renderers
 @SideOnly(Side.CLIENT)
 public class RenderStrongarmStray extends RenderSkeleton {
 

@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.spider;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.cavespider.RenderLeapingCaveSpider;
 import blue.thejester.badderbaddies.client.render.spider.RenderLeapingSpider;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.ai.EntityAIBigLeapAtTarget;
 import blue.thejester.badderbaddies.entity.cavespider.EntityMyCaveSpider;
 import net.minecraft.util.ResourceLocation;
@@ -13,10 +14,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LeapingSpider extends EntityMySpider {
-    private static final String NAME = "spider_leaping";
+    public static final String NAME = "spider_leaping";
 
     public LeapingSpider(World worldIn) {
         super(worldIn);
+        this.experienceValue += 12;
     }
 
     @Override
@@ -55,10 +57,9 @@ public class LeapingSpider extends EntityMySpider {
         return 1f;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SPIDER_LEAPING;
     }
 
     public static void registerSelf(int id) {

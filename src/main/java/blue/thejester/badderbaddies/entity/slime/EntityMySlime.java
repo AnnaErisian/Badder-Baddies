@@ -18,6 +18,8 @@ public abstract class EntityMySlime extends EntitySlime {
 
     protected abstract float magicDamage(int size);
 
+    protected abstract int expBoost(int size);
+
     protected void setSlimeSize(int size, boolean resetHealth)
     {
         super.setSlimeSize(size, resetHealth);
@@ -28,7 +30,7 @@ public abstract class EntityMySlime extends EntitySlime {
             this.setHealth(this.getMaxHealth());
         }
 
-        this.experienceValue = size;
+        this.experienceValue = size + expBoost(size);
     }
 
     /**

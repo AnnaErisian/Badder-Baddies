@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.stray;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.stray.RenderSlimingStray;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.MobEffects;
@@ -15,10 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SlimingStray extends EntityMyStray {
 
-    public static String NAME = "stray_sliming";
+    public static final String NAME = "stray_sliming";
 
     public SlimingStray(World worldIn) {
         super(worldIn);
+        this.experienceValue += 14;
     }
 
     @Override
@@ -40,10 +42,9 @@ public class SlimingStray extends EntityMyStray {
         return new SlimingStray(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.STRAY_SLIMING;
     }
 
     protected EntityArrow getArrow(float entity)

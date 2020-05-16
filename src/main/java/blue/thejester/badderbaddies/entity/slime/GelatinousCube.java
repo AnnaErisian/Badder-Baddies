@@ -4,6 +4,7 @@ import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.BBParticleTypes;
 import blue.thejester.badderbaddies.client.render.ParticleSpawner;
 import blue.thejester.badderbaddies.client.render.slime.RenderGelatinousSlime;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.util.EnumParticleTypes;
@@ -17,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GelatinousCube extends EntityMySlime {
 
-    public static String NAME = "slime_gelatinous_cube";
+    public static final String NAME = "slime_gelatinous_cube";
 
     public GelatinousCube(World worldIn) {
         super(worldIn);
@@ -57,6 +58,11 @@ public class GelatinousCube extends EntityMySlime {
     }
 
     @Override
+    protected int expBoost(int size) {
+        return size+3;
+    }
+
+    @Override
     protected EnumParticleTypes getParticleType() {
         return EnumParticleTypes.SLIME;
     }
@@ -67,7 +73,7 @@ public class GelatinousCube extends EntityMySlime {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return getSlimeSize() == 1 ? LootTables.SLIME_GELATINOUS : null;
     }
 
 

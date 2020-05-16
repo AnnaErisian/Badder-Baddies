@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.ghast;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.ghast.RenderFatherGhast;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
@@ -15,10 +16,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class FatherGhast extends EntityMyGhast {
-    private static final String NAME = "ghast_father";
+    public static final String NAME = "ghast_father";
 
     public FatherGhast(World worldIn) {
         super(worldIn);
+        this.experienceValue += 10;
     }
 
     @Override
@@ -44,10 +46,9 @@ public class FatherGhast extends EntityMyGhast {
         }
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.GHAST_FATHER;
     }
 
     public static void registerSelf(int id) {

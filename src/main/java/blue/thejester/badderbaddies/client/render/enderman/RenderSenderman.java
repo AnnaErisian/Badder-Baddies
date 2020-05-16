@@ -8,9 +8,12 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
+@SideOnly(Side.CLIENT)
 public class RenderSenderman extends RenderEnderman {
 
     private static final ResourceLocation TEXTURE_LOCATION =

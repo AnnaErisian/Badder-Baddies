@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.blaze;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderThunderBlaze;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -12,10 +13,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ThunderBlaze extends EntityMyBlaze {
 
-    public static String NAME = "blaze_thunder";
+    public static final String NAME = "blaze_thunder";
 
     public ThunderBlaze(World worldIn) {
         super(worldIn);
+        this.experienceValue += 20;
     }
 
     @Override
@@ -50,7 +52,7 @@ public class ThunderBlaze extends EntityMyBlaze {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.BLAZE_THUNDER;
     }
 
     public static void registerSelf(int id) {

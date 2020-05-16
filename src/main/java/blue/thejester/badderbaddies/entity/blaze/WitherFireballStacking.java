@@ -19,7 +19,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WitherFireballStacking extends EntitySmallFireball {
-    private static final String NAME = "bb_witherer_fireball";
+    public static final String NAME = "bb_witherer_fireball";
 
     public WitherFireballStacking(World worldIn) {
         super(worldIn);

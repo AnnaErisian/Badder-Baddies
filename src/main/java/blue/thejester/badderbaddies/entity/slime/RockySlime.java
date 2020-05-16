@@ -4,6 +4,7 @@ import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.BBParticleTypes;
 import blue.thejester.badderbaddies.client.render.ParticleSpawner;
 import blue.thejester.badderbaddies.client.render.slime.RenderRockySlime;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.util.EnumParticleTypes;
@@ -17,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class RockySlime extends EntityMySlime {
 
-    public static String NAME = "slime_rocky";
+    public static final String NAME = "slime_rocky";
 
     public RockySlime(World worldIn) {
         super(worldIn);
@@ -51,6 +52,11 @@ public class RockySlime extends EntityMySlime {
     }
 
     @Override
+    protected int expBoost(int size) {
+        return size;
+    }
+
+    @Override
     protected EnumParticleTypes getParticleType() {
         return EnumParticleTypes.SLIME;
     }
@@ -61,7 +67,7 @@ public class RockySlime extends EntityMySlime {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return getSlimeSize() == 1 ? LootTables.SLIME_ROCKY : null;
     }
 
 

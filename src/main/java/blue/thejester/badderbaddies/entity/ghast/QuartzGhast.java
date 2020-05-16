@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.ghast;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.blaze.RenderTurboBlaze;
 import blue.thejester.badderbaddies.client.render.ghast.RenderQuartzGhast;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.blaze.TurboBlaze;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -12,10 +13,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class QuartzGhast extends EntityMyGhast {
-    private static final String NAME = "ghast_quartz";
+    public static final String NAME = "ghast_quartz";
 
     public QuartzGhast(World worldIn) {
         super(worldIn);
+        this.experienceValue += 5;
     }
 
     @Override
@@ -23,10 +25,9 @@ public class QuartzGhast extends EntityMyGhast {
         return 16;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.GHAST_QUARTZ;
     }
 
     public static void registerSelf(int id) {

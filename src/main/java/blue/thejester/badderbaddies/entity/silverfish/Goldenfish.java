@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.silverfish;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.silverfish.RenderGoldenfish;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -11,10 +12,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Goldenfish extends EntityMySilverfish {
 
-    public static String NAME = "silverfish_gold";
+    public static final String NAME = "silverfish_gold";
 
     public Goldenfish(World worldIn) {
         super(worldIn);
+        this.experienceValue += 10;
     }
 
     @Override
@@ -37,10 +39,9 @@ public class Goldenfish extends EntityMySilverfish {
         return 1.2f;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SILVERFISH_GOLDENFISH;
     }
 
     public static void registerSelf(int id) {

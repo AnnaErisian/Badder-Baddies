@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.stray;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.stray.RenderStrongarmStray;
 import blue.thejester.badderbaddies.client.render.witherskeleton.RenderCharredWS;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.witherskeleton.EntityMyWitherSkeleton;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,10 +23,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class StrongarmStray extends EntityMyStray {
 
-    public static String NAME = "stray_strongarm";
+    public static final String NAME = "stray_strongarm";
 
     public StrongarmStray(World worldIn) {
         super(worldIn);
+        this.experienceValue += 8;
     }
 
     @Override
@@ -47,10 +49,9 @@ public class StrongarmStray extends EntityMyStray {
         return new StrongarmStray(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.STRAY_STRONGARM;
     }
 
     public static void registerSelf(int id) {

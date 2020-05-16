@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.creeper;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.creeper.RenderAngryCreeper;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderSwiftarmSkeleton;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.skeleton.EntityMySkeleton;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -13,10 +14,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class AngryCreeper extends EntityMyCreeper {
 
-    public static String NAME = "creeper_angry";
+    public static final String NAME = "creeper_angry";
 
     public AngryCreeper(World worldIn) {
         super(worldIn);
+        this.experienceValue += 6;
     }
 
     @Override
@@ -33,10 +35,9 @@ public class AngryCreeper extends EntityMyCreeper {
         return new AngryCreeper(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.CREEPER_ANGRY;
     }
 
     public static void registerSelf(int id) {

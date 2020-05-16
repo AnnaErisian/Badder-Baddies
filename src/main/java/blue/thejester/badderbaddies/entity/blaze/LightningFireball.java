@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LightningFireball extends EntitySmallFireball {
-    private static final String NAME = "bb_lightning_fireball";
+    public static final String NAME = "bb_lightning_fireball";
 
     public LightningFireball(World worldIn) {
         super(worldIn);

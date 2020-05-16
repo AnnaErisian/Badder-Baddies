@@ -3,6 +3,7 @@ package blue.thejester.badderbaddies.entity.enderman;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.enderman.RenderSenderman;
 import blue.thejester.badderbaddies.client.render.enderman.RenderSlenderman;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -21,10 +22,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class Senderman extends EntityMyEnderman {
 
-    public static String NAME = "enderman_senderman";
+    public static final String NAME = "enderman_senderman";
 
     public Senderman(World worldIn) {
         super(worldIn);
+        this.experienceValue += 24;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class Senderman extends EntityMyEnderman {
         return new Senderman(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.ENDERMAN_SENDERMAN;
     }
 
     @Override

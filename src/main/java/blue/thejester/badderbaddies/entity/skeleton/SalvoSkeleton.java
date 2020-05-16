@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.skeleton;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderSalvoSkeleton;
+import blue.thejester.badderbaddies.entity.LootTables;
 import blue.thejester.badderbaddies.entity.ModEntities;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.util.ResourceLocation;
@@ -13,10 +14,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class SalvoSkeleton extends EntityMySkeleton {
 
-    public static String NAME = "skeleton_salvo";
+    public static final String NAME = "skeleton_salvo";
 
     public SalvoSkeleton(World worldIn) {
         super(worldIn);
+        this.experienceValue += 18;
     }
 
     @Override
@@ -48,10 +50,9 @@ public class SalvoSkeleton extends EntityMySkeleton {
         return new SalvoSkeleton(this.world);
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SKELETON_SALVO;
     }
 
     public static void registerSelf(int id) {

@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.shulker;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.shulker.RenderDiamondShulker;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -11,10 +12,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class DiamondShulker extends EntityMyShulker {
 
-    public static String NAME = "shulker_diamond";
+    public static final String NAME = "shulker_diamond";
 
     public DiamondShulker(World worldIn) {
         super(worldIn);
+        this.experienceValue += 16;
     }
 
     @Override
@@ -39,7 +41,7 @@ public class DiamondShulker extends EntityMyShulker {
 
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.SHULKER_DIAMOND;
     }
 
     public static void registerSelf(int id) {

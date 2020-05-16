@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.creeper;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.creeper.RenderWobblyCreeper;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.init.MobEffects;
@@ -15,10 +16,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class WobblyCreeper extends EntityMyCreeper {
 
-    public static String NAME = "creeper_wobbly";
+    public static final String NAME = "creeper_wobbly";
 
     public WobblyCreeper(World worldIn) {
         super(worldIn);
+        this.experienceValue += 22;
     }
 
     @Override
@@ -45,10 +47,9 @@ public class WobblyCreeper extends EntityMyCreeper {
         }
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.CREEPER_WOBBLY;
     }
 
     public static void registerSelf(int id) {

@@ -2,6 +2,7 @@ package blue.thejester.badderbaddies.entity.witch;
 
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.witch.RenderCovenMatron;
+import blue.thejester.badderbaddies.entity.LootTables;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -10,10 +11,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CovenMatron extends EntityMyWitch{
-    private static final String NAME = "witch_coven_matron";
+    public static final String NAME = "witch_coven_matron";
 
     public CovenMatron(World worldIn) {
         super(worldIn);
+        this.experienceValue += 40;
     }
 
     @Override
@@ -46,10 +48,9 @@ public class CovenMatron extends EntityMyWitch{
         return 2;
     }
 
-    //TODO make these also give everyone one
     @Override
     protected ResourceLocation getLootTable() {
-        return new ResourceLocation(BadderBaddies.MODID, NAME);
+        return LootTables.WITCH_MATRON;
     }
 
     public static void registerSelf(int id) {
