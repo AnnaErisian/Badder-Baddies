@@ -81,7 +81,7 @@ public class ShrapnelSlime extends EntityMySlime {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, ShrapnelSlime.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x4f4f4f, 0x424242);
     }
 
     @SideOnly(Side.CLIENT)

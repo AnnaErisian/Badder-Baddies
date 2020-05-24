@@ -86,7 +86,7 @@ public class SolarCube extends EntityMyMagmaCube {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, SolarCube.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x310000, 0xffff00);
     }
 
     @SideOnly(Side.CLIENT)

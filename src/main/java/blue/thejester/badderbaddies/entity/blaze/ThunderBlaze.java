@@ -59,7 +59,7 @@ public class ThunderBlaze extends EntityMyBlaze {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, ThunderBlaze.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xe6a601, 0xffff00);
     }
 
     @SideOnly(Side.CLIENT)

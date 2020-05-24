@@ -34,7 +34,7 @@ public class QuartzGhast extends EntityMyGhast {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, QuartzGhast.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xe9e9e9, 0x636363);
     }
 
     @SideOnly(Side.CLIENT)

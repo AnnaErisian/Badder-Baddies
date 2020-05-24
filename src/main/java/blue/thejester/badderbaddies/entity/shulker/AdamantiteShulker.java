@@ -48,7 +48,7 @@ public class AdamantiteShulker extends EntityMyShulker {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, AdamantiteShulker.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x865d86, 0x1ea6a6);
     }
 
     @SideOnly(Side.CLIENT)

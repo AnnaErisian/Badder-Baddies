@@ -57,7 +57,7 @@ public class PreparedWitch extends EntityMyWitch{
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, PreparedWitch.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x290000, 0x267d13);
     }
 
     @SideOnly(Side.CLIENT)

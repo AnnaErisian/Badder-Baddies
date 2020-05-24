@@ -81,7 +81,7 @@ public class GelatinousCube extends EntityMySlime {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, GelatinousCube.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x898989, 0x878787);
     }
 
     @SideOnly(Side.CLIENT)

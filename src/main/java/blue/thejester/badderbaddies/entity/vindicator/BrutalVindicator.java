@@ -57,7 +57,7 @@ public class BrutalVindicator extends EntityMyVindicator {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, BrutalVindicator.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x878c8c, 0x46201c);
     }
 
     @SideOnly(Side.CLIENT)

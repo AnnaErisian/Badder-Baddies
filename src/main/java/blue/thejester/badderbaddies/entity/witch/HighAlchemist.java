@@ -57,7 +57,7 @@ public class HighAlchemist extends EntityMyWitch{
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, HighAlchemist.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x001d30, 0x300000);
     }
 
     @SideOnly(Side.CLIENT)

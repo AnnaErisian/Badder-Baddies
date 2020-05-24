@@ -69,7 +69,7 @@ public class GoldenGhast extends EntityMyGhast {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, GoldenGhast.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xe9e9bc, 0xa17e2e);
     }
 
     @SideOnly(Side.CLIENT)

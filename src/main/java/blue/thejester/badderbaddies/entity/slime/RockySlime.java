@@ -75,7 +75,7 @@ public class RockySlime extends EntityMySlime {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, RockySlime.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x3a3a3a, 0x303030);
     }
 
     @SideOnly(Side.CLIENT)

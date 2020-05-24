@@ -3,7 +3,11 @@ package blue.thejester.badderbaddies.entity.skeleton;
 import blue.thejester.badderbaddies.BadderBaddies;
 import blue.thejester.badderbaddies.client.render.skeleton.RenderBarrageSkeleton;
 import blue.thejester.badderbaddies.entity.LootTables;
+import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
@@ -48,6 +52,15 @@ public class BarrageSkeleton extends EntityMySkeleton {
         return new BarrageSkeleton(this.world);
     }
 
+    /**
+     * Gives armor or weapon for entity based on given DifficultyInstance
+     */
+    protected void setEquipmentBasedOnDifficulty(DifficultyInstance difficulty)
+    {
+        super.setEquipmentBasedOnDifficulty(difficulty);
+        this.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, new ItemStack(Items.BOW));
+    }
+
     @Override
     protected ResourceLocation getLootTable() {
         return LootTables.SKELETON_BARRAGE;
@@ -57,7 +70,7 @@ public class BarrageSkeleton extends EntityMySkeleton {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, BarrageSkeleton.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xafafaf, 0x4f4f4f);
     }
 
     @SideOnly(Side.CLIENT)

@@ -71,7 +71,7 @@ public class TurboBlaze extends EntityMyBlaze {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, TurboBlaze.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xe6a601, 0xffffff);
     }
 
     @SideOnly(Side.CLIENT)

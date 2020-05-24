@@ -66,7 +66,7 @@ public class LeapingSpider extends EntityMySpider {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, LeapingSpider.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x29241f, 0x0a592a);
     }
 
     @SideOnly(Side.CLIENT)

@@ -64,7 +64,7 @@ public class SwiftarmSkeleton extends EntityMySkeleton {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, SwiftarmSkeleton.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xababab, 0xdbdbdb);
     }
 
     @SideOnly(Side.CLIENT)

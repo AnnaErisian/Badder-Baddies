@@ -66,7 +66,7 @@ public class WitherPiglin extends EntityMyWitherSkeleton {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, WitherPiglin.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x141414, 0x754949);
     }
 
     public boolean attackEntityAsMob(Entity entityIn)

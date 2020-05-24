@@ -66,8 +66,7 @@ public class Slenderman extends EntityMyEnderman {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, Slenderman.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
-    }
+                0x000000, 0xffffff);    }
 
     @SideOnly(Side.CLIENT)
     public static void registerOwnRenderer() {

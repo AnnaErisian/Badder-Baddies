@@ -22,13 +22,9 @@ import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
-import scala.actors.threadpool.Arrays;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public abstract class EntityMyWitch extends EntityWitch {
 
@@ -197,14 +193,14 @@ public abstract class EntityMyWitch extends EntityWitch {
     private ItemStack getPotionItem(Potion p, int dur, int lvl) {
         return PotionUtils.appendEffects(
                 PotionUtils.addPotionToItemStack(new ItemStack(Items.SPLASH_POTION), PotionTypes.WATER),
-                Arrays.asList(new PotionEffect[]{new PotionEffect(p, dur, lvl)})
+                Arrays.asList(new PotionEffect(p, dur, lvl))
         );
     }
 
     private ItemStack getHealingPotionItem(int lvl) {
         return PotionUtils.appendEffects(
                 PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.HEALING),
-                Arrays.asList(new PotionEffect[]{new PotionEffect(MobEffects.INSTANT_HEALTH, 1, lvl-1)})
+                Arrays.asList(new PotionEffect(MobEffects.INSTANT_HEALTH, 1, lvl-1))
         );
     }
 }

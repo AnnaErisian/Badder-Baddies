@@ -57,7 +57,7 @@ public class PlagueZombie extends EntityMyZombie {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, PlagueZombie.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x009f9f, 0x65ff3d);
     }
 
     @SideOnly(Side.CLIENT)

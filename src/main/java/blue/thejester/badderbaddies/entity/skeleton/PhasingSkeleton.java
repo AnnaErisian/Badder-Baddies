@@ -131,7 +131,7 @@ public class PhasingSkeleton extends EntityMySkeleton {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, PhasingSkeleton.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xababb0, 0x173b3b);
     }
 
     @SideOnly(Side.CLIENT)

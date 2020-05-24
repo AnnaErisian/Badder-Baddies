@@ -94,7 +94,7 @@ public class ArgentCube extends EntityMyMagmaCube {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, ArgentCube.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x310000, 0xff0000);
     }
 
     @SideOnly(Side.CLIENT)

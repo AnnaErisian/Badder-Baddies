@@ -49,7 +49,7 @@ public class SpeedCreeper extends EntityMyCreeper {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, SpeedCreeper.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0xdc90ed, 0x818b25);
     }
 
     @SideOnly(Side.CLIENT)

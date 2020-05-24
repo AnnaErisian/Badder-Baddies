@@ -44,7 +44,7 @@ public class AngryCreeper extends EntityMyCreeper {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, AngryCreeper.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x860b0b, 0x000000);
     }
 
     @SideOnly(Side.CLIENT)

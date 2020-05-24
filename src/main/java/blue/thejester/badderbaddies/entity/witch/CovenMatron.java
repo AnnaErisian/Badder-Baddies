@@ -57,7 +57,7 @@ public class CovenMatron extends EntityMyWitch{
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, CovenMatron.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x050505, 0x180030);
     }
 
     @SideOnly(Side.CLIENT)

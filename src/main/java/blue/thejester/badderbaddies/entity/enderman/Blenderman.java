@@ -64,7 +64,7 @@ public class Blenderman extends EntityMyEnderman {
         ResourceLocation entity_name = new ResourceLocation(BadderBaddies.MODID, NAME);
         EntityRegistry.registerModEntity(entity_name, Blenderman.class, NAME, id,
                 BadderBaddies.instance, 64, 3, true,
-                0xdc90ed, 0xb570d3);
+                0x080808, 0x000000);
     }
 
     @SideOnly(Side.CLIENT)
