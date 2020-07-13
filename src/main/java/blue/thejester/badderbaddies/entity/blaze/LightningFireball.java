@@ -38,7 +38,11 @@ public class LightningFireball extends EntitySmallFireball {
     protected void onImpact(RayTraceResult result) {
         super.onImpact(result);
         if(!world.isRemote) {
-            world.addWeatherEffect(new EntityLightningBolt(world, result.getBlockPos().getX(), result.getBlockPos().getY(), result.getBlockPos().getZ(), false));
+            if(result != null && result.getBlockPos() != null) {
+                world.addWeatherEffect(new EntityLightningBolt(world, result.getBlockPos().getX(), result.getBlockPos().getY(), result.getBlockPos().getZ(), false));
+            } else if(result != null && result.entityHit != null) {
+                world.addWeatherEffect(new EntityLightningBolt(world, result.entityHit.posX, result.entityHit.posY, result.entityHit.posZ, false));
+            }
         }
     }
 

@@ -32,17 +32,17 @@ public class SalvoSkeleton extends EntityMySkeleton {
 
     @Override
     protected double damageBoost() {
-        return 2;
+        return 8;
     }
 
     @Override
     protected int magicDamage() {
-        return 2;
+        return 4;
     }
 
     @Override
     protected int firingSpeed() {
-        return 15;
+        return 8;
     }
 
     @Override

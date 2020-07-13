@@ -100,7 +100,7 @@ public class PhasingSkeleton extends EntityMySkeleton {
 
     @Override
     protected double damageBoost() {
-        return 2;
+        return 3;
     }
 
     @Override
@@ -110,7 +110,7 @@ public class PhasingSkeleton extends EntityMySkeleton {
 
     @Override
     protected int firingSpeed() {
-        return 20;
+        return 10;
     }
 
     @Override

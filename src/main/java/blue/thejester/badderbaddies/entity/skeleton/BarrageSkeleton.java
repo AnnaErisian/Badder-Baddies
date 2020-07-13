@@ -30,17 +30,17 @@ public class BarrageSkeleton extends EntityMySkeleton {
 
     @Override
     protected double damageBoost() {
-        return 2;
+        return 5;
     }
 
     @Override
     protected int magicDamage() {
-        return 1;
+        return 3;
     }
 
     @Override
     protected int firingSpeed() {
-        return 20;
+        return 10;
     }
 
     @Override

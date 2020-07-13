@@ -70,7 +70,7 @@ import java.util.List;
 
 public class ReplacementSet {
 
-    static HashMap<Class<? extends EntityLivingBase>, ReplacementSet> replacementSets = new HashMap<>();
+    static HashMap<Class<? extends EntityLiving>, ReplacementSet> replacementSets = new HashMap<>();
 
     private List<ReplacementEntry> entries;
     private int weightTotal = 0;
@@ -91,7 +91,7 @@ public class ReplacementSet {
         }
     }
 
-    public EntityLivingBase getReplacement(World world) {
+    public EntityLiving getReplacement(World world) {
         int rand = world.rand.nextInt(getWeightTotal());
         for(ReplacementEntry e : entries) {
             if(rand < e.weight) {
@@ -116,117 +116,117 @@ public class ReplacementSet {
          * @param w the World to spawn into
          * @return the new entity, or null to pass
          */
-        public abstract EntityLivingBase getEntity(World w);
+        public abstract EntityLiving getEntity(World w);
     }
 
     static {
         replacementSets.put(EntityZombie.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new RottingZombie(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new ReachingZombie(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new PlagueZombie(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new MutatedZombie(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new RottingZombie(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new ReachingZombie(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new PlagueZombie(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new MutatedZombie(w) : null; } }
         ));
         replacementSets.put(EntityHusk.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new DessicatedHusk(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Mummy(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new DessicatedHusk(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Mummy(w) : null; } }
         ));
         replacementSets.put(EntityCreeper.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new AngryCreeper(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new SpeedCreeper(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new WobblyCreeper(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new QuantumCreeper(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new AngryCreeper(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new SpeedCreeper(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new WobblyCreeper(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new QuantumCreeper(w) : null; } }
         ));
         replacementSets.put(EntitySkeleton.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new SwiftarmSkeleton(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new PhasingSkeleton(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BarrageSkeleton(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new SalvoSkeleton(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new SwiftarmSkeleton(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new PhasingSkeleton(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BarrageSkeleton(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new SalvoSkeleton(w) : null; } }
         ));
         replacementSets.put(EntityStray.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new StrongarmStray(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new SlimingStray(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new WandererStray(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new StrongarmStray(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new SlimingStray(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new WandererStray(w) : null; } }
         ));
         replacementSets.put(EntityWitherSkeleton.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new WitherPiglin(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new CharredWS(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new PearlescentWS(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new DragonheartWS(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new WitherPiglin(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new CharredWS(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new PearlescentWS(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new DragonheartWS(w) : null; } }
         ));
         replacementSets.put(EntitySpider.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new DashingSpider(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new MotherSpider(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new LeapingSpider(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new NeurovenomSpider(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(1)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(1, w) ? new DashingSpider(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new MotherSpider(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new LeapingSpider(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new NeurovenomSpider(w) : null; } }
         ));
         replacementSets.put(EntityCaveSpider.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new DashingCaveSpider(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new LeapingCaveSpider(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new TinyJerk(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new DashingCaveSpider(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new LeapingCaveSpider(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new TinyJerk(w) : null; } }
         ));
         replacementSets.put(EntityWitch.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new PreparedWitch(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BattyWitch(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new HighAlchemist(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new CovenMatron(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new PreparedWitch(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BattyWitch(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new HighAlchemist(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new CovenMatron(w) : null; } }
         ));
         replacementSets.put(EntityGhast.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new QuartzGhast(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new FatherGhast(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new ElderGhast(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new GoldenGhast(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new QuartzGhast(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new FatherGhast(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new ElderGhast(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new GoldenGhast(w) : null; } }
         ));
         replacementSets.put(EntitySilverfish.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new Goldenfish(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Platinumfish(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new Goldenfish(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Platinumfish(w) : null; } }
         ));
         replacementSets.put(EntityBlaze.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new MagmaBlaze(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new ThunderBlaze(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new WitherBlaze(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new TurboBlaze(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new MagmaBlaze(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new ThunderBlaze(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new WitherBlaze(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new TurboBlaze(w) : null; } }
         ));
         replacementSets.put(EntityShulker.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new IronShulker(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new DiamondShulker(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new AdamantiteShulker(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new IronShulker(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new DiamondShulker(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new AdamantiteShulker(w) : null; } }
         ));
         replacementSets.put(EntityVindicator.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BrutalVindicator(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new RevenantVindicator(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new BrutalVindicator(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new RevenantVindicator(w) : null; } }
         ));
         replacementSets.put(EntitySlime.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new RockySlime(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new BloodSlime(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new ShrapnelSlime(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new GelatinousCube(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new RockySlime(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new BloodSlime(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new ShrapnelSlime(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(6)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(6, w) ? new GelatinousCube(w) : null; } }
         ));
         replacementSets.put(EntityMagmaCube.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new SolarCube(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new ArgentCube(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new SolarCube(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new ArgentCube(w) : null; } }
         ));
         replacementSets.put(EntityEnderman.class, new ReplacementSet(
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLivingBase getEntity(World w) { return null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new Blenderman(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new Slenderman(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new Renderman(w) : null; } },
-                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLivingBase getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Senderman(w) : null; } }
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(0)) { public EntityLiving getEntity(World w) { return null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(2)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(2, w) ? new Blenderman(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(3)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(3, w) ? new Slenderman(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(4)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(4, w) ? new Renderman(w) : null; } },
+                new ReplacementEntry(SpawnWeights.getRelativeWeight(5)) { public EntityLiving getEntity(World w) { return SpawnWeights.canSpawnOnDay(5, w) ? new Senderman(w) : null; } }
         ));
     }
 }

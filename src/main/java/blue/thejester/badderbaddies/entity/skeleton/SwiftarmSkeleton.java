@@ -43,7 +43,7 @@ public class SwiftarmSkeleton extends EntityMySkeleton {
 
     @Override
     protected int firingSpeed() {
-        return 15;
+        return 0;
     }
 
     @Override
